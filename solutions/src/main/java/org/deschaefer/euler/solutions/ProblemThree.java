@@ -104,7 +104,7 @@ final class ProblemThree {
      * @param primes list of known primes
      * @return true if prime
      */
-    static boolean isPrime(final Long testMe, final List<Long> primes) {
+    private static boolean isPrime(final Long testMe, final List<Long> primes) {
 
         if (primes.contains(testMe)) {
             return true;
@@ -122,7 +122,7 @@ final class ProblemThree {
             startwith = primes.get(primes.size() - 1);
         }
 
-        final Long half = testMe / 2;
+        final long half = testMe / 2;
 
         for (long outer = startwith; outer <= half; outer++) {
 

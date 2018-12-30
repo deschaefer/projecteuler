@@ -74,17 +74,23 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-pmd-plugin</artifactId>-->
-                <!--<version>3.11.0</version>-->
-                <!--<configuration>-->
-                    <!--&lt;!&ndash;<rulesets>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<ruleset>/rulesets/java/braces.xml</ruleset>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<ruleset>/rulesets/java/naming.xml</ruleset>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</rulesets>&ndash;&gt;-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>3.1.10</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <xmlOutput>true</xmlOutput>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -94,7 +100,8 @@
                         <id>validate</id>
                         <phase>validate</phase>
                         <configuration>
-                            <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>                            <encoding>UTF-8</encoding>
+                            <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+                            <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
                         </configuration>

@@ -3,7 +3,6 @@ package org.deschaefer.euler.solutions;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.deschaefer.euler.solutions.ProblemThree.buildPrimes;
@@ -11,8 +10,8 @@ import static org.junit.Assert.*;
 
 public class ProblemThreeTest {
 
-    Long primes[] = {2L,3L,5L,7L,11L,13L,17L,19L,23L,29L,31L,37L,43L,53L,
-    59L,127L,131L};
+    private final Long[] primes = {2L, 3L, 5L, 7L, 11L, 13L, 17L, 19L, 23L, 29L, 31L, 37L, 43L, 53L,
+            59L, 127L, 131L};
 
     @Test
     public void isPrime() {
@@ -42,7 +41,7 @@ public class ProblemThreeTest {
         Integer primesLength = primes.size();
         Integer testLength = test.length;
 
-        Assert.assertTrue(primesLength.equals(testLength));
+        assertEquals(primesLength, testLength);
     }
 
     @Test
