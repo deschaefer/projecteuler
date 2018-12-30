@@ -35,9 +35,9 @@ final class ProblemThree {
 
         Long target = 600851475143L;
 //        final Long target = 123100L;
-        final Double squareroot = Math.sqrt(target);
+        final Double squareRoot = Math.sqrt(target);
 
-        List<Long> primes = buildPrimes(squareroot.longValue() + 1);
+        List<Long> primes = buildPrimes(squareRoot.longValue() + 1);
 
         if (primes.contains(target)) {
             return target.toString();
@@ -77,11 +77,11 @@ final class ProblemThree {
             }
         }
 
-        long sttopTime = new Date().getTime();
+        long stopTime = new Date().getTime();
         System.out.println("Build Primes Finish : "
                 + new Date().getTime()
                 + " : "
-                + (sttopTime - startTime));
+                + (stopTime - startTime));
 
         return primes;
     }
@@ -116,15 +116,15 @@ final class ProblemThree {
             }
         }
 
-        Long startwith = 2L;
+        Long startWith = 2L;
 
         if (primes.size() > 0) {
-            startwith = primes.get(primes.size() - 1);
+            startWith = primes.get(primes.size() - 1);
         }
 
         final long half = testMe / 2;
 
-        for (long outer = startwith; outer <= half; outer++) {
+        for (long outer = startWith; outer <= half; outer++) {
 
             if (testMe % outer == 0) {
                 return false;

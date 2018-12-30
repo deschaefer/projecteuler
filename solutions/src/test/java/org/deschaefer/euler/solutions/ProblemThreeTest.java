@@ -1,11 +1,9 @@
 package org.deschaefer.euler.solutions;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
 
-import static org.deschaefer.euler.solutions.ProblemThree.buildPrimes;
 import static org.junit.Assert.*;
 
 public class ProblemThreeTest {

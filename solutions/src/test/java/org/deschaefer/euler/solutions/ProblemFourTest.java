@@ -3,6 +3,7 @@ package org.deschaefer.euler.solutions;
 import org.junit.Assert;
 import org.junit.Test;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class ProblemFourTest {
 
     @Test
