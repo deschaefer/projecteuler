@@ -3,6 +3,7 @@ package org.deschaefer.euler.solutions;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.deschaefer.euler.solutions.ProblemThree.buildPrimes;
@@ -10,26 +11,16 @@ import static org.junit.Assert.*;
 
 public class ProblemThreeTest {
 
+    Long primes[] = {2L,3L,5L,7L,11L,13L,17L,19L,23L,29L,31L,37L,43L,53L,
+    59L,127L,131L};
+
     @Test
     public void isPrime() {
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(2L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(3L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(5L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(7L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(11L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(13L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(17L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(19L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(23L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(29L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(31L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(37L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(43L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(53L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(59L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(127L));
-        org.junit.Assert.assertTrue(ProblemThree.isPrime(131L));
 
+        for ( Long p : primes )
+        {
+            org.junit.Assert.assertTrue(ProblemThree.isPrime(p));
+        }
     }
 
     @Test
@@ -47,12 +38,20 @@ public class ProblemThreeTest {
         List<Long> primes = ProblemThree.buildPrimes(25L);
 
         Long[] test = {2L,3L,5L,7L,11L,13L,17L,19L,23L};
-        Assert.assertArrayEquals(test,primes.toArray());
+
+        Integer primesLength = primes.size();
+        Integer testLength = test.length;
+
+        Assert.assertTrue(primesLength.equals(testLength));
     }
 
     @Test
     public void buildPrimesTest2() {
-        List<Long> primes = ProblemThree.buildPrimes(1000000L);
+
+        for ( long x = 1; x < 100001; x = x * 10) {
+            System.out.println(x);
+            ProblemThree.buildPrimes(x);
+        }
     }
 
 }
