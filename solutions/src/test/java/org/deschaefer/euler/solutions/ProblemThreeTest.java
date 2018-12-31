@@ -16,23 +16,23 @@ public class ProblemThreeTest {
 
         for ( Long p : primes )
         {
-            org.junit.Assert.assertTrue(ProblemThree.isPrime(p));
+            org.junit.Assert.assertTrue(SolutionUtils.isPrime(p));
         }
     }
 
     @Test
     public void isNotPrime() {
-        org.junit.Assert.assertFalse(ProblemThree.isPrime(4L));
-        org.junit.Assert.assertFalse(ProblemThree.isPrime(6L));
-        org.junit.Assert.assertFalse(ProblemThree.isPrime(8L));
-        org.junit.Assert.assertFalse(ProblemThree.isPrime(9L));
-        org.junit.Assert.assertFalse(ProblemThree.isPrime(15L));
-        org.junit.Assert.assertFalse(ProblemThree.isPrime(21L));
+        org.junit.Assert.assertFalse(SolutionUtils.isPrime(4L));
+        org.junit.Assert.assertFalse(SolutionUtils.isPrime(6L));
+        org.junit.Assert.assertFalse(SolutionUtils.isPrime(8L));
+        org.junit.Assert.assertFalse(SolutionUtils.isPrime(9L));
+        org.junit.Assert.assertFalse(SolutionUtils.isPrime(15L));
+        org.junit.Assert.assertFalse(SolutionUtils.isPrime(21L));
     }
 
     @Test
     public void buildPrimesTest() {
-        List<Long> primes = ProblemThree.buildPrimes(25L);
+        List<Long> primes = SolutionUtils.buildPrimes(25L);
 
         Long[] test = {2L,3L,5L,7L,11L,13L,17L,19L,23L};
 
@@ -47,7 +47,7 @@ public class ProblemThreeTest {
 
         for ( long x = 1; x < 100001; x = x * 10) {
             System.out.println(x);
-            ProblemThree.buildPrimes(x);
+            SolutionUtils.buildPrimes(x);
         }
     }
 
