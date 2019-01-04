@@ -10,19 +10,13 @@ import java.util.List;
  * <p>
  * What is the 10 001st prime number?
  */
+@SuppressWarnings("PMD.SystemPrintln")
 final class ProblemSeven {
 
     /**
-     * private constructor
+     * base ctor
      */
-    private ProblemSeven() {
-    }
-
-    /**
-     * @param args command line params
-     */
-    public static void main(final String[] args) {
-        System.out.println(solve());
+    /* package */ ProblemSeven() {
     }
 
     /**
@@ -30,11 +24,11 @@ final class ProblemSeven {
      *
      * @return the answer
      */
-    private static String solve() {
+    /* package */ String solve() {
 
-        List<Long> primes = SolutionUtils.findPrimes(10001);
+        final List<Long> primes = SolutionUtils.findPrimes(10001);
 
-        Long lastPrime = primes.get(primes.size() - 1);
+        final Long lastPrime = primes.get(primes.size() - 1);
 
         return Long.toString(lastPrime);
     }

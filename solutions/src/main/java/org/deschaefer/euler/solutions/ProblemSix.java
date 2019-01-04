@@ -15,19 +15,13 @@ package org.deschaefer.euler.solutions;
  * Find the difference between the sum of the squares of the first one hundred
  * natural numbers and the square of the sum.
  */
+@SuppressWarnings("PMD.SystemPrintln")
 final class ProblemSix {
 
     /**
-     * private constructor
+     * base ctor
      */
-    private ProblemSix() {
-    }
-
-    /**
-     * @param args command line params
-     */
-    public static void main(final String[] args) {
-        System.out.println(solve());
+    /* package */ ProblemSix() {
     }
 
     /**
@@ -35,7 +29,7 @@ final class ProblemSix {
      *
      * @return the answer
      */
-    private static String solve() {
+    /* package */ String solve() {
 
         long sum = 0;
         long squareEachSum = 0;
@@ -43,12 +37,12 @@ final class ProblemSix {
         for (int x = 0; x <= 100; x++) {
             sum += x;
 
-            squareEachSum += (x * x);
+            squareEachSum += x * x;
         }
 
-        long squareSum = sum * sum;
+        final long squareSum = sum * sum;
 
-        long diff = squareSum - squareEachSum;
+        final long diff = squareSum - squareEachSum;
 
         return Long.toString(diff);
 

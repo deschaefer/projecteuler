@@ -8,19 +8,13 @@ package org.deschaefer.euler.solutions;
  * <p>
  * Find the largest palindrome made from the product of two 3-digit numbers.
  */
+@SuppressWarnings("PMD.SystemPrintln")
 final class ProblemFour {
 
     /**
-     * private constructor
+     * base ctor
      */
-    private ProblemFour() {
-    }
-
-    /**
-     * @param args command line params
-     */
-    public static void main(final String[] args) {
-        System.out.println(solve());
+    /* package */ ProblemFour() {
     }
 
     /**
@@ -28,22 +22,22 @@ final class ProblemFour {
      *
      * @return the answer
      */
-    private static String solve() {
+    /* package */ String solve() {
 
         int biggest = 0;
 
         for (int left = 100; left < 1000; left++) {
             for (int right = 100; right < 1000; right++) {
-                int product = right * left;
+                final Integer product = right * left;
 
-                String productString = Integer.toString(product);
-                int productStringLength = productString.length();
+                final String productString = Integer.toString(product);
+                final int productStrLen = productString.length();
 
-                if (productStringLength % 2 == 0) {
+                if (productStrLen % 2 == 0
+                        && isPalindrome(productString)
+                        && product > biggest) {
+                    biggest = product;
 
-                    if (isPalindrome(productString) && product > biggest) {
-                        biggest = product;
-                    }
                 }
             }
         }
@@ -52,27 +46,34 @@ final class ProblemFour {
 
     /**
      * is the string a palindrome
+     *
      * @param productString the string to test
      * @return true if palindrome
      */
-    static boolean isPalindrome(final String productString) {
+    /* package */ boolean isPalindrome(final String productString) {
 
-        int productStringLength = productString.length();
-        int half = productStringLength / 2;
+        boolean rVal = true;
 
-        String leftString = productString.substring(0, half);
-        String rightString = productString.substring(half);
+        final int productStrLen = productString.length();
+        final int half = productStrLen / 2;
+
+        final String leftString = productString.substring(0, half);
+        final String rightString = productString.substring(half);
 
         for (int pos = 0; pos < half; pos++) {
 
-            char leftChar = leftString.toCharArray()[pos];
-            char rightChar = rightString.toCharArray()[(half - 1) - pos];
+            final char[] leftCharArray = leftString.toCharArray();
+            final char leftChar = leftCharArray[pos];
 
-            if (!(leftChar == rightChar)) {
-                return false;
+            final char[] rightCharArray = rightString.toCharArray();
+            final char rightChar = rightCharArray[(half - 1) - pos];
+
+            if (leftChar != rightChar) {
+                rVal = false;
+                break;
             }
         }
-        return true;
+        return rVal;
     }
 
 }

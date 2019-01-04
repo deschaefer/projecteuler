@@ -9,44 +9,43 @@ import java.util.List;
  * <p>
  * What is the largest prime factor of the number 600851475143 ?
  */
+@SuppressWarnings("PMD.SystemPrintln")
 final class ProblemThree {
 
     /**
-     * private constructor
+     * value to calculate against
      */
-    private ProblemThree() {
-    }
+    private static final Long TARGET = 600851475143L;
+//        final Long target = 123100L;
 
     /**
-     * @param args command line params
+     * base ctor
      */
-    public static void main(final String[] args) {
-        System.out.println("\n" + solve());
+    /* package */ ProblemThree() {
     }
+
 
     /**
      * solve the problem
      *
      * @return the answer
      */
-    private static String solve() {
+    /* package */ String solve() {
 
-        Long target = 600851475143L;
-//        final Long target = 123100L;
-        final Double squareRoot = Math.sqrt(target);
+        final Double squareRoot = Math.sqrt(TARGET);
 
-        List<Long> primes =
+        final List<Long> primes =
                 SolutionUtils.buildPrimes(squareRoot.longValue() + 1);
 
-        if (primes.contains(target)) {
-            return target.toString();
+        if (primes.contains(TARGET)) {
+            return TARGET.toString();
         }
 
         Long biggest = 0L;
 
-        for (Long outer : primes) {
+        for (final Long outer : primes) {
 
-            if (target % outer == 0) {
+            if (TARGET % outer == 0) {
                 biggest = outer;
             }
 

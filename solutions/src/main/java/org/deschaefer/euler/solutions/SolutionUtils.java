@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * general utility class for problem solutions.
  */
+@SuppressWarnings("PMD.SystemPrintln")
 final class SolutionUtils {
 
     /**
@@ -21,11 +22,11 @@ final class SolutionUtils {
      * @param max max value to determine prime.
      * @return list of primes
      */
-    static List<Long> buildPrimes(final Long max) {
+    /* package */ static List<Long> buildPrimes(final Long max) {
 
-        List<Long> primes = new ArrayList<>();
+        final List<Long> primes = new ArrayList<>();
         primes.add(2L);
-        long startTime = new Date().getTime();
+        final long startTime = new Date().getTime();
 
         System.out.println("Build Primes Start : " + startTime);
 
@@ -36,7 +37,7 @@ final class SolutionUtils {
             }
         }
 
-        long stopTime = new Date().getTime();
+        final long stopTime = new Date().getTime();
         System.out.println("Build Primes Finish : "
                 + new Date().getTime()
                 + " : "
@@ -51,13 +52,13 @@ final class SolutionUtils {
      * @param numberToFind number of primes, starting with 2 to find
      * @return list or primes in the order found.
      */
-    static List<Long> findPrimes(final int numberToFind) {
+    /* package */ static List<Long> findPrimes(final int numberToFind) {
 
-        List<Long> primes = new ArrayList<>();
+        final List<Long> primes = new ArrayList<>();
 
         primes.add(2L);
 
-        long startTime = new Date().getTime();
+        final long startTime = new Date().getTime();
 
         System.out.println("Find Primes Start : " + startTime);
 
@@ -72,7 +73,7 @@ final class SolutionUtils {
             test++;
         }
 
-        long stopTime = new Date().getTime();
+        final long stopTime = new Date().getTime();
         System.out.println("Find Primes Finish : "
                 + new Date().getTime()
                 + " : "
@@ -87,7 +88,7 @@ final class SolutionUtils {
      * @param testMe number to test
      * @return true if prime
      */
-    static boolean isPrime(final Long testMe) {
+    /* package */ static boolean isPrime(final Long testMe) {
         return isPrime(testMe, new ArrayList<>());
 
     }
@@ -107,7 +108,7 @@ final class SolutionUtils {
             return true;
         }
 
-        for (Long prime : primes) {
+        for (final Long prime : primes) {
             if (testMe % prime == 0) {
                 return false;
             }
@@ -115,7 +116,7 @@ final class SolutionUtils {
 
         Long startWith = 2L;
 
-        if (primes.size() > 0) {
+        if (!primes.isEmpty()) {
             startWith = primes.get(primes.size() - 1);
         }
 

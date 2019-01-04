@@ -11,19 +11,13 @@ package org.deschaefer.euler.solutions;
  * By considering the terms in the Fibonacci sequence whose values do not exceed
  * four million, find the sum of the even-valued terms.
  */
+@SuppressWarnings("PMD.SystemPrintln")
 final class ProblemTwo {
 
     /**
-     * private constructor
+     * base ctor
      */
-    private ProblemTwo() {
-    }
-
-    /**
-     * @param args command line params
-     */
-    public static void main(final String[] args) {
-        System.out.println(solve());
+    /* package */ ProblemTwo() {
     }
 
     /**
@@ -31,15 +25,15 @@ final class ProblemTwo {
      *
      * @return the answer
      */
-    private static String solve() {
+    /* package */ String solve() {
 
         long prior = 0;
         long fib = 1;
 
-        long result = 0;
+        Long result = 0L;
 
         while (fib < 4000000) {
-            long tempPrior = fib;
+            final long tempPrior = fib;
             fib = fib + prior;
             prior = tempPrior;
 
@@ -48,6 +42,6 @@ final class ProblemTwo {
                 result += fib;
             }
         }
-        return Double.toString(result);
+        return result.toString();
     }
 }

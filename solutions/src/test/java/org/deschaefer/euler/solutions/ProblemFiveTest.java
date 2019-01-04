@@ -6,5 +6,6 @@ public class ProblemFiveTest {
 
     @Test
     public void test() {
+        new ProblemFive().solve();
     }
 }

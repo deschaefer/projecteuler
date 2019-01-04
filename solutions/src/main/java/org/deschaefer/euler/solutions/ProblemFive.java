@@ -9,19 +9,13 @@ package org.deschaefer.euler.solutions;
  * What is the smallest positive number that is evenly divisible by all of the
  * numbers from 1 to 20?
  */
-final class ProblemFive {
+@SuppressWarnings("PMD.SystemPrintln")
+/* package */ final class ProblemFive {
 
     /**
-     * private constructor
+     * base ctor
      */
-    private ProblemFive() {
-    }
-
-    /**
-     * @param args command line params
-     */
-    public static void main(final String[] args) {
-        System.out.println(solve());
+    /* package */ ProblemFive() {
     }
 
     /**
@@ -29,7 +23,7 @@ final class ProblemFive {
      *
      * @return the answer
      */
-    private static String solve() {
+    /* package */ String solve() {
 
         boolean notfound = true;
         int target = 40;
@@ -38,7 +32,7 @@ final class ProblemFive {
 
             boolean allGood = true;
             for (int x = 1; x <= 20; x++) {
-                int modulo = target % x;
+                final int modulo = target % x;
 
                 if (modulo > 0) {
                     allGood = false;
