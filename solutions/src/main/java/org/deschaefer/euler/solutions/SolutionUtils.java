@@ -52,7 +52,7 @@ final class SolutionUtils {
      * @param numberToFind number of primes, starting with 2 to find
      * @return list or primes in the order found.
      */
-    /* package */ static List<Long> findPrimes(final int numberToFind) {
+    /* package */ static List<Long> findPrimes(final long numberToFind) {
 
         final List<Long> primes = new ArrayList<>();
 
