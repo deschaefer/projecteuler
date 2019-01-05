@@ -30,7 +30,7 @@ final class ProblemTen {
      */
     /* package */ String solve() {
 
-        final List<Long> primes = SolutionUtils.findPrimes(MAX);
+        final List<Long> primes = SolutionUtils.buildPrimes(MAX);
 
         long sum = 0;
         for (final Long prime : primes) {

@@ -67,7 +67,6 @@ final class SolutionUtils {
         while (primes.size() < numberToFind) {
 
             if (isPrime(test, primes)) {
-                System.out.println("Found Prime : " + test);
                 primes.add(test);
             }
 

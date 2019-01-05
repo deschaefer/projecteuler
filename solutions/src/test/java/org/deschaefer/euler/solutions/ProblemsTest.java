@@ -58,7 +58,7 @@ public class ProblemsTest {
     @Test
     public void testTen() {
 
-        Assert.assertEquals("31875000",new ProblemTen().solve());
+        Assert.assertEquals("142913828922",new ProblemTen().solve());
     }
 
 }
