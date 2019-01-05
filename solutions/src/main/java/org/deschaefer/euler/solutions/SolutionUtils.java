@@ -33,6 +33,7 @@ final class SolutionUtils {
         for (long x = 3; x < max; x = x + 2) {
 
             if (isPrime(x, primes)) {
+                System.out.println("Found Prime : " + x);
                 primes.add(x);
             }
         }
